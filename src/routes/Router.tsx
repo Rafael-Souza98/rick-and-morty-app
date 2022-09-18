@@ -1,33 +1,26 @@
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import React from 'react';
 import Episodes from '../screens/Episodes/Episodes';
 import Home from '../screens/Homescreen/Home';
 
+import { CharIcon} from '../components/Icons/IconChar'
+import { EpIcon } from '../components/Icons/IconEp';
 
-const Drawer = createDrawerNavigator();
-
-
-function AppRoute(){
-      return (
-          <Drawer.Navigator>
-                <Drawer.Screen name='Characters' component={Home} />
-                <Drawer.Screen name='Episodes' component={Episodes} />
-          </Drawer.Navigator>
-      )
-};
-
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-export default function AppStack(){
-    return (
-        <Stack.Navigator>
-            <Stack.Screen name='Drawer' component={AppRoute}/>           
-        </Stack.Navigator>
-    )
-  }
+
+export default function TabNavigate(){
+    
+    return(
+        <Tab.Navigator>
+            <Tab.Screen name='Characters' component={Home} options={{tabBarIcon: () => { return <CharIcon/> }}}/>
+            <Tab.Screen name='Episodes' component={Episodes} options={{tabBarIcon: () => { return <EpIcon/>}}} />
+        </Tab.Navigator>
+)
+}
 
 
 

@@ -12,7 +12,7 @@ type DataAPI = {
     results: DataChar[]
 };
 
-type DataChar = {
+export type DataChar = {
     id: number;
     name: string;
     image: ImageProps["source"]
