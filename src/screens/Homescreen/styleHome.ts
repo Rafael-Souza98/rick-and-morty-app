@@ -18,7 +18,7 @@ border:1px;
 
 export const ContentScreen = styled.SafeAreaView`
 max-width: 450px;
-background-color: #363636;
+background-color: ${props => props.theme.COLORS.PRIMARY};
 padding-top: 5%;
 
 
@@ -30,9 +30,10 @@ align-self: center;
 margin-left: 5%;
 justify-content: space-around;
 padding-top: 2%;
-color: white;
+color: ${props=>props.theme.COLORS.SECONDARY};
 
 `;
+
 
 
 

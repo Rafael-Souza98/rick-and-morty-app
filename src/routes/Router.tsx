@@ -15,9 +15,11 @@ const Stack = createNativeStackNavigator();
 export default function TabNavigate(){
     
     return(
-        <Tab.Navigator>
-            <Tab.Screen name='Characters' component={Home} options={{tabBarIcon: () => { return <CharIcon/> }}}/>
-            <Tab.Screen name='Episodes' component={Episodes} options={{tabBarIcon: () => { return <EpIcon/>}}} />
+        <Tab.Navigator screenOptions={{}}>
+            <Tab.Screen name='Characters' component={Home} options={{tabBarIcon: () => { return <CharIcon/> },
+        tabBarLabel:'Characters', }}/>
+            <Tab.Screen name='Episodes' component={Episodes} options={{tabBarIcon: () => { return <EpIcon/>}, 
+        tabBarLabel: 'Episodes'}} />
         </Tab.Navigator>
 )
 }

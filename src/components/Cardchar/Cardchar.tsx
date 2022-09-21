@@ -1,6 +1,7 @@
 import React from 'react';
-import { ScrollView, View, Image, ImageProps } from 'react-native';
+import { ScrollView, View, Image, ImageProps, Switch } from 'react-native';
 import { ContentCard, ContentScreen, ImageChar, TextCard } from '../../screens/Homescreen/styleHome';
+import { AppBar} from '@react-native-material/core'
 
 // import { Container } from './styles';
 export interface IPropsChar{
@@ -14,7 +15,8 @@ const Cardchar = ({image, name, status, species}: IPropsChar)  => {
 
 
   return (
-        <ContentScreen>
+    <View> 
+          <ContentScreen>
             <ContentCard>
              <ImageChar source={{uri: image}}/>
              <View>
@@ -23,6 +25,7 @@ const Cardchar = ({image, name, status, species}: IPropsChar)  => {
              </View>
             </ContentCard>
         </ContentScreen>
+    </View>
   )
 }
 
